@@ -10,16 +10,17 @@
 mkdir ~/kinto_server && cd ~/kinto_server
 virtualenv env
 source env/bin/activate
-pip install kinto
+pip install kinto  kinto_redis
 kinto init
 kinto migrate
-kinto start
+kinto start #运行在  0.0.0.0:8888
 ```
 
 # kinto配置
 ### redis作为存储后端
-安装redis
+安装redis:`sudo apt-get install redis-server`
 
+在`kinto init`时选择redis
 ```
 # Backends.
 #
